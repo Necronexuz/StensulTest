@@ -1,15 +1,17 @@
 from stensul.src.elements.list_item import ListItem
-from stensul.src.pages.list_app_page import ListApp
+from stensul.src.pages.list_page import ListApp
 from stensul.test.common.test_base import TestBase
 
 _CREATORS = "Creators: Matt Duffer, Ross Duffer"
-_GOOD_IMG_PATH = '/Users/ivanjimenezlanda/PycharmProjects/StensulTest/img/Artorias-token.png'
-_GOOD_IMG_PATH_NEW = '/Users/ivanjimenezlanda/PycharmProjects/StensulTest/img/IVJL.JPG'
 _ACCEPTABLE_TXT = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean " \
                   "massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec " \
                   "quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. " \
                   "Donec."
 _EDIT_TEXT = "Sir Artorias the Abysswalker was one of the Four Knights of Lord Gwyn"
+
+# TODO Please Update this to you own complete file Paths
+_GOOD_IMG_PATH = '/Users/ivanjimenezlanda/PycharmProjects/StensulTest/img/Artorias-token.png'
+_GOOD_IMG_PATH_NEW = '/Users/ivanjimenezlanda/PycharmProjects/StensulTest/img/IVJL.JPG'
 
 
 class TestList(TestBase):
@@ -57,7 +59,7 @@ class TestList(TestBase):
                 break
         assert found_item.get_description() == _CREATORS, "Description is not Matching"
 
-    # T05 - Search Item by description
+    # T05 - Validate max text length
     def test_max_length(self):
         list_app_page = ListApp(self.driver)
         list_app_page.open()

@@ -23,6 +23,7 @@ class ListApp(BasePage):
         self.__list_count = BasePageElement(PageListLoc.LIST_COUNT, wait=self._wait)
 
     def get_item(self, index: int) -> ListItem:
+        """Return The Item from the list"""
         self.list_items.reload()
         try:
             if index < 0:
@@ -90,6 +91,7 @@ class ListApp(BasePage):
     def create_is_enabled(self) -> bool:
         return self.__create_btn.is_enabled()
 
+    #TODO - This can maybe modulated.
     def write_textarea(self, text):
         self.__textarea.write(text)
 

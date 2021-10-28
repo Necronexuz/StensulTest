@@ -21,7 +21,7 @@ class BasePageElement:
             raise ValueError(f'Page element must have either an instance of wait or a root web element.')
 
     def wait_until_present(self) -> WebElement:
-        """Wait until page is loaded"""
+        """Wait until page is Present"""
         if self._root and isinstance(self._root, WebElement):
             return self._root.find_element(*self._loc)
         elif self._wait and isinstance(self._wait, WebDriverWait):
@@ -30,6 +30,7 @@ class BasePageElement:
             raise ValueError(f'Page element must have either an instance of wait or a root web element.')
 
     def wait_until_text_present(self, text) -> WebElement:
+        """Wait until page is Text of element is Present"""
         if self._root and isinstance(self._root, WebElement):
             return self._root.find_element(*self._loc)
         elif self._wait and isinstance(self._wait, WebDriverWait):
